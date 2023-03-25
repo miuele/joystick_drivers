@@ -412,6 +412,7 @@ void Joy::handleJoyDeviceRemoved(const SDL_Event & e)
     haptic_ = nullptr;
   }
   if (joystick_ != nullptr) {
+    RCLCPP_INFO(get_logger(), "Removing joystick: %s", SDL_JoystickName(joystick_));
     SDL_JoystickClose(joystick_);
     joystick_ = nullptr;
   }
